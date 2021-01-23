@@ -1,0 +1,59 @@
+# {{ ansible_managed }}
+DEVICE={{ item.name }}
+{% if 'type' in item %}
+TYPE={{ item.type }}
+{% endif %}
+{% if 'onboot' in item %}
+ONBOOT={{ item.onboot }}
+{% endif %}
+{% if 'bootproto' in item %}
+BOOTPROTO={{ item.bootproto }}
+{% endif %}
+{% if 'nm_controller' in item %}
+NM_CONTROLLED={{ item.nm_controller }}
+{% endif %}
+{% if 'mtu' in item %}
+MTU={{ item.mtu }}
+{% endif %}
+{% if 'defroute' in item %}
+DEFROUTE={{ item.defroute }}
+{% endif %}
+{% if 'ipv4_failure_fatal' in item %}
+IPV4_FAILURE_FATAL={{ item.ipv4_failure_fatal }}
+{% endif %}
+{% if 'uuid' in item %}
+UUID={{ item.uuid }}
+{% endif %}
+{% if 'hwaddr' in item %}
+HWADDR={{ item.hwaddr }}
+{% endif %}
+{% if 'ipaddr' in item %}
+IPADDR={{ item.ipaddr }}
+{% endif %}
+{% if 'netmask' in item %}
+NETMASK={{ item.netmask }}
+{% endif %}
+{% if 'prefix' in item %}
+PREFIX={{ item.prefix }}
+{% endif %}
+{% if 'network' in item %}
+NETWORK={{ item.network }}
+{% endif %}
+{% if 'gateway' in item %}
+GATEWAY={{ item.gateway }}
+{% endif %}
+{% if 'dns1' in item %}
+DNS1={{ item.dns1 }}
+{% endif %}
+{% if 'dns2' in item %}
+DNS2={{ item.dns2 }}
+{% endif %}
+{% if 'domain' in item %}
+DOMAIN={{ item.domain }}
+{% endif %}
+{% if 'ipv6_peerdns' in item %}
+IPV6_PEERDNS={{ item.ipv6_peerdns }}
+{% endif %}
+{% if 'ipv6_peerroutes' in item %}
+IPV6_PEERROUTES={{ item.ipv6_peerroutes }}
+{% endif %}

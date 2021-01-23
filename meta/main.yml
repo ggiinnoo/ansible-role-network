@@ -1,0 +1,20 @@
+---
+galaxy_info:
+  role_name: network
+  author: Gino Jansen
+  description: Configure networks in linux
+  license: license (BSD, MIT)
+  platforms:
+    - name: Centos
+      versions:
+        - 6
+        - 7
+        - 8
+
+  min_ansible_version: 2.5
+
+  galaxy_tags:
+    - ipv4
+    - ipv6
+    - network
+    - centos

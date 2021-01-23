@@ -1,0 +1,6 @@
+---
+
+- name: Configure networks for CentOS
+  include_tasks: CentOS.yml
+  when:
+    - ansible_distribution == "CentOS"

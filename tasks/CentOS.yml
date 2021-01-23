@@ -1,0 +1,21 @@
+---
+
+- name: Configure networks
+  template:
+    src: templates/ifcfg.j2
+    dest: /etc/sysconfig/network-scripts/ifcfg-{{ item.name }}
+  with_items:
+   - "{{ networks }}"
+  when: not item.disabled | default(false)
+  notify:
+    - restartNetwork
+
+- name: Disable networks
+  file:
+    path: /etc/sysconfig/network-scripts/ifcfg-{{ item.name }}
+    state: absent
+  with_items:
+   - "{{ networks }}"
+  when: item.disabled | default(false)
+  notify:
+    - restartNetwork
