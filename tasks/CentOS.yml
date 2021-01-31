@@ -7,6 +7,7 @@
   with_items:
    - "{{ networks }}"
   when: not item.disabled | default(false)
+  register: configureNetworkStatus
   notify:
     - restartNetwork
 
@@ -17,5 +18,12 @@
   with_items:
    - "{{ networks }}"
   when: item.disabled | default(false)
+  register: disableNetworkStatus
   notify:
     - restartNetwork
+
+- name: restart immediately
+  service:
+    name: network
+    state: restarted
+  when: configureNetworkStatus.changed or disableNetworkStatus.changed
