@@ -1,3 +1,5 @@
+![Ansible role network](https://github.com/ggiinnoo/ansible-role-network/workflows/Ansible%20role%20network/badge.svg)
+
 Network
 =========
 
@@ -17,7 +19,7 @@ There are no requirements for this role
 Role Variables
 --------------
 
-This is an example of a full script install
+This is an example of possible variables:
 
     networks:
     - name: "eth1"
@@ -59,6 +61,16 @@ Example Playbook
       hosts: all
       roles:
         - ggiinnoo.network
+          networks:
+          - name: "eth1"
+            type: "Ethernet"
+            onboot: "yes"
+            bootproto: "none"
+            nm_controlled: "no"
+            mtu: 9000
+            ipaddr: "192.168.32.2"
+            netmask: "255.255.255.0"
+            network: "192.168.32.0"
 
 License
 -------
